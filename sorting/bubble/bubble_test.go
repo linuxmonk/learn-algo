@@ -1,4 +1,4 @@
-package sorting
+package bubble
 
 import (
 	"os"

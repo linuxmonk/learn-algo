@@ -1,4 +1,4 @@
-package sorting
+package bubble
 
 func BubbleV1(list []int) {
 
