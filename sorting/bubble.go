@@ -1,11 +1,9 @@
 package sorting
 
-import "errors"
+func BubbleV1(list []int) {
 
-func Bubble(list []int) error {
-
-	if list == nil || len(list) == 0 {
-		return errors.New("nil/empty input")
+	if list == nil || len(list) <= 1 {
+		return
 	}
 
 	n := len(list)
@@ -24,5 +22,24 @@ func Bubble(list []int) error {
 			i++
 		}
 	}
-	return nil
+}
+
+func BubbleV2(list []int) {
+
+	if list == nil || len(list) <= 1 {
+		return
+	}
+
+	n := len(list) - 1
+	sorted := false
+	for !sorted {
+		sorted = true
+		for i := 0; i < n; i++ {
+			if list[i] > list[i+1] {
+				list[i], list[i+1] = list[i+1], list[i]
+				sorted = false
+			}
+		}
+		n--
+	}
 }
