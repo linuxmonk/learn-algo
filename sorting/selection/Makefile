@@ -9,10 +9,15 @@ test:
 	go test -v .
 
 bench:
-	go test -run=zzz -bench=SelectionSort -count=5
+	V=1 go test -run=zzz -bench=SelectionSort -count=5 | tee old.txt
+	V=2 go test -run=zzz -bench=SelectionSort -count=5 | tee new.txt
+	@echo ">> ======================================"
+	@echo ">> Comparing statistics between v1 and v2"
+	@echo ">> ======================================"
+	benchstat old.txt new.txt
 
 cpuprofile:
 	go test -run=zzz -bench=SelectionSort -count=5 -cpuprofile cpuprof.out
 
 clean:
-	rm -f selection.test cpuprof.out
+	rm -f old.txt new.txt sorting.test cpuprof.out
