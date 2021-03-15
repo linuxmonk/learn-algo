@@ -6,3 +6,14 @@ This sorting algorithm iterate through the list and tries to determine the lowes
 
 - Comparison
 - Swapping
+
+*Comparisons*
+
+In the worst case the number of comparisons we make is same as bubble sort. We compare every element to its next value. 
+
+*Swaps*
+
+However the number of swaps per pass is only one. Where as in bubble sort every comparison was also accompanied by a swap. 
+
+
+SelectionSort is slightly better than bubble sort.
