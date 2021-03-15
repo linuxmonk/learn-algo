@@ -70,8 +70,6 @@ func benchBubbleSort(b *testing.B, alg func([]int)) {
 		unsorted[i] = i ^ 0x2cc
 	}
 	data := make([]int, len(unsorted))
-	b.ResetTimer()
-	b.StartTimer()
 	for i := 0; i < b.N; i++ {
 		copy(data, unsorted)
 		b.StartTimer()
