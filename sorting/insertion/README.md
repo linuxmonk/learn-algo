@@ -7,3 +7,18 @@ This sorting algorithm starts at index 1 of the list as the pivot. The value at 
 - Comparison
 - Shifting
 - Inserting
+
+In the worst case scenario when all the elements need sorting the numbers below indicate the number of ops performed -
+
+
+| Pivot | Array        | Compare       | Shift | Insert |
+|-------|--------------|---------------|-------|--------|
+| 1     | [5,4,3,2,1]  | 1             | 1     | 1      |
+| 2     | [4,5,3,2,1]  | 2             | 2     | 1      |
+| 3     | [3,4,5,2,1]  | 3             | 3     | 1      |
+| 4     | [2,3,4,5,1]  | 4             | 4     | 1      |
+| 5     | [1,2,3,4,5]  |               |       |        |
+|       |              |               |       |        |
+|       |    TOTAL     | 10            | 10    | 4      |
+
+Total of 24 operations.
