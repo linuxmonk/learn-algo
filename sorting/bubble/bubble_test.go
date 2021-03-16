@@ -12,36 +12,42 @@ import (
 func testBubbleSort(t *testing.T, alg func([]int)) {
 
 	tests := []struct {
+		name     string
 		input    []int
 		expected []int
 		fn       func([]int)
 		err      error
 	}{
 		{
+			name:     "RANDOM_UNSORTED",
 			input:    []int{2, 4, 1, 3, 7},
 			expected: []int{1, 2, 3, 4, 7},
 			fn:       alg,
 			err:      nil,
 		},
 		{
+			name:     "REVERSE_ORDERED",
 			input:    []int{5, 4, 3, 2, 1},
 			expected: []int{1, 2, 3, 4, 5},
 			fn:       alg,
 			err:      nil,
 		},
 		{
+			name:     "TWO_ELEMENT_UNSORTED",
 			input:    []int{2, 1},
 			expected: []int{1, 2},
 			fn:       alg,
 			err:      nil,
 		},
 		{
+			name:     "SINGLE_ELEMENT",
 			input:    []int{1},
 			expected: []int{1},
 			fn:       alg,
 			err:      nil,
 		},
 		{
+			name:     "NIL_LIST",
 			input:    nil,
 			expected: nil,
 			fn:       alg,
@@ -49,9 +55,11 @@ func testBubbleSort(t *testing.T, alg func([]int)) {
 		},
 	}
 	for _, test := range tests {
-		test.fn(test.input)
-		equal := reflect.DeepEqual(test.input, test.expected)
-		assert.Equal(t, equal, true)
+		t.Run(test.name, func(t *testing.T) {
+			test.fn(test.input)
+			equal := reflect.DeepEqual(test.input, test.expected)
+			assert.Equal(t, equal, true)
+		})
 	}
 }
 

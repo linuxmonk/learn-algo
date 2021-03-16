@@ -31,7 +31,3 @@ Total number of swaps depend on the numbers/data. But in the worst case when the
 | 20                | 380                       |  400   |
 
 The algorithms complexity tends to be N^2 (N-Squared).
-
-
-
-
