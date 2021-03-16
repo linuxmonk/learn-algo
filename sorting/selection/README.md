@@ -14,6 +14,19 @@ In the worst case the number of comparisons we make is same as bubble sort. We c
 *Swaps*
 
 However the number of swaps per pass is only one. Where as in bubble sort every comparison was also accompanied by a swap. 
-
-
 SelectionSort is slightly better than bubble sort.
+
+In the worst case scenario when all the elements need sorting the numbers below indicate the number of ops performed -
+
+
+| UnsortedIndex | Array        | Lowest Index | Compare       | Swaps |
+|---------------|--------------|--------------|---------------|-------|
+| 0             | [5,4,3,2,1]  |  4           | 4             | 1     |
+| 1             | [1,4,3,2,5]  |  3           | 3             | 1     |
+| 2             | [1,2,3,4,5]  |  2           | 2             | 0     |
+| 3             | [1,2,3,4,5]  |  3           | 1             | 0     |
+| 4             | [1,2,3,4,5]  |  4           | 0             | 0     |
+|               |              |              |               |       |
+|               |    TOTAL     |              | 10            | 02    |
+
+Total of 12 operations.
