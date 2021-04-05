@@ -39,3 +39,10 @@ func TestLinterBadCode(t *testing.T) {
 	err := l.Lint(code)
 	assert.NotEqual(t, nil, err)
 }
+
+func TestLinterBadExpression(t *testing.T) {
+	code := "var x = { y: [1, 2, 3] })"
+	l := New()
+	err := l.Lint(code)
+	assert.NotEqual(t, nil, err)
+}
